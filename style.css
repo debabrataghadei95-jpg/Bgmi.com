@@ -6,40 +6,57 @@ body {
     text-align: center;
 }
 
-/* Layout */
-.container {
-    margin-top: 80px;
-}
-
-/* Headings */
+/* Title */
 h1 {
     color: #00ffcc;
-    font-size: 32px;
+    margin-top: 20px;
 }
 
 p {
     color: #aaa;
 }
 
+/* Search box */
+input {
+    padding: 12px;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+    border: none;
+    margin: 15px;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 /* Card */
 .card {
     background: #1c1c1c;
-    padding: 25px;
-    margin: 20px;
+    padding: 20px;
+    margin: 15px;
     border-radius: 15px;
-    display: inline-block;
-    width: 300px;
+    width: 280px;
+}
+
+/* Image */
+.card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 10px;
 }
 
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 15px 25px;
-    margin: 10px;
-    border-radius: 10px;
+    padding: 12px 18px;
+    margin: 8px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
 }
 
 .download {
@@ -47,42 +64,22 @@ p {
     color: black;
 }
 
-.download:hover {
-    background: #00c9a3;
-}
-
 .telegram {
     background: #229ED9;
     color: white;
 }
 
-.telegram:hover {
-    background: #1b7fb3;
-}
-
-/* ⭐ Rating System */
+/* ⭐ Rating */
 .rating {
-    font-size: 28px;
+    font-size: 24px;
     cursor: pointer;
-    margin: 15px 0;
-    user-select: none;
+    margin: 10px 0;
 }
 
 .rating span {
     color: gray;
-    transition: 0.2s;
 }
 
 .rating span.active {
     color: gold;
-}
-
-/* 🔍 Search Box */
-input {
-    padding: 12px;
-    width: 80%;
-    max-width: 400px;
-    border-radius: 8px;
-    border: none;
-    margin-top: 20px;
 }

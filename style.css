@@ -20,10 +20,11 @@ p {
 input {
     padding: 12px;
     width: 80%;
-    max-width: 400px;
+    max-width: 420px;
     border-radius: 8px;
     border: none;
     margin: 15px;
+    outline: none;
 }
 
 /* Container */
@@ -39,7 +40,12 @@ input {
     padding: 20px;
     margin: 15px;
     border-radius: 15px;
-    width: 280px;
+    width: 300px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
 }
 
 /* Image */
@@ -59,14 +65,24 @@ input {
     font-weight: bold;
 }
 
+/* Download Button */
 .download {
     background: #00ffcc;
     color: black;
 }
 
+.download:hover {
+    background: #00c9a3;
+}
+
+/* Telegram Button */
 .telegram {
     background: #229ED9;
     color: white;
+}
+
+.telegram:hover {
+    background: #1b7fb3;
 }
 
 /* ⭐ Rating */
@@ -74,10 +90,12 @@ input {
     font-size: 24px;
     cursor: pointer;
     margin: 10px 0;
+    user-select: none;
 }
 
 .rating span {
     color: gray;
+    transition: 0.2s;
 }
 
 .rating span.active {

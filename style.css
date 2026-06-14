@@ -7,7 +7,7 @@ body {
     text-align: center;
 }
 
-/* Title */
+/* TITLE */
 h1 {
     color: #00ffcc;
     margin-top: 20px;
@@ -19,7 +19,7 @@ p {
     font-size: 0.9rem;
 }
 
-/* Search box */
+/* SEARCH BOX */
 input {
     padding: 10px;
     width: 80%;
@@ -36,56 +36,59 @@ input::placeholder {
     color: #888;
 }
 
-/* Container */
+/* CONTAINER */
 .container {
     display: flex;
-    flex-direction: column; 
-    align-items: center;    
+    flex-direction: column;
+    align-items: center;
     gap: 15px;
     padding: 15px;
     width: 100%;
     box-sizing: border-box;
 }
 
-/* --- UPDATED CARD STYLE --- */
+/* =========================
+   CARD DESIGN (MAIN FIX)
+========================= */
 .card {
     background: #1c1c1c;
     border-radius: 12px;
-    width: 95%;            
-    max-width: 600px;      
-    height: 130px;         /* Height ko thoda optimize kiya hai */
-    box-sizing: border-box;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    overflow: hidden;      
-    
+    width: 95%;
+    max-width: 600px;
+    height: 140px;
+
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Left, Middle aur Right sections me balance ke liye */
+    justify-content: space-between;
+
     padding: 10px 15px;
+    box-sizing: border-box;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
 }
 
-/* Left Section: Logo + Rating Combo */
+/* LEFT SIDE (LOGO + STARS) */
 .card-left {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-width: 90px; /* Thoda explicit space taaki layout hile na */
+    min-width: 90px;
 }
 
-/* Logo Chota kiya gaya hai */
+/* LOGO */
 .card img {
-    width: 75px;          
-    height: 75px;          
+    width: 75px;
+    height: 75px;
     object-fit: cover;
-    border-radius: 12px; 
-    margin-bottom: 5px;     
+    border-radius: 12px;
+    margin-bottom: 6px;
 }
 
-/* --- RATING STARS (LOGO KE NICHE) --- */
+/* STARS UNDER LOGO */
 .rating {
-    font-size: 11px;
-    cursor: pointer;
+    font-size: 12px;
     text-align: center;
 }
 
@@ -95,76 +98,73 @@ input::placeholder {
 
 .rating span.active {
     color: #00ffcc;
-    text-shadow: 0 0 5px rgba(0, 255, 204, 0.6);
+    text-shadow: 0 0 6px rgba(0, 255, 204, 0.6);
 }
 
-/* Middle Section: APK Name aur Version (Logo ke aage) */
+/* MIDDLE (APK NAME + VERSION) */
 .card-info {
-    flex: 1;              
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 4px;
-    padding: 0 15px;       
+    gap: 6px;
+    padding: 0 15px;
     text-align: left;
 }
 
-/* APK Name */
+/* APK NAME */
 .card h2 {
-    font-size: 1.2rem;     
-    color: #ffffff;
+    font-size: 1.2rem;
+    color: white;
     margin: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-/* APK Version */
+/* VERSION */
 .card p {
     font-size: 0.85rem;
     margin: 0;
-    color: #00ffcc; /* Version ko thoda clean highlight dene ke liye */
+    color: #00ffcc;
     font-weight: 500;
 }
 
-/* Right Section: Buttons (Download upar, Contact neeche) */
+/* RIGHT SIDE (BUTTONS) */
 .card-buttons {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     gap: 8px;
-    justify-content: center;
-    align-items: stretch; /* Taki dono buttons barabar width ke dikhein */
-    min-width: 110px;
+    min-width: 120px;
+    align-items: stretch;
 }
 
-/* --- ANIMATED BUTTONS WITH GLOW EFFECT --- */
+/* BUTTON BASE */
 .btn {
     display: block;
-    padding: 8px 12px;     
+    padding: 8px 10px;
     border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     text-transform: uppercase;
-    transition: all 0.3s ease;
-    white-space: nowrap;
     text-align: center;
+    transition: 0.3s ease;
 }
 
-/* DOWNLOAD BUTTON (Top) */
+/* DOWNLOAD BUTTON */
 .download {
     background: #00ff00;
     color: black;
-    box-shadow: 0 0 8px rgba(0, 255, 0, 0.4); 
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
 }
 
 .download:hover {
     transform: scale(1.05);
-    background: #26ff26;
     box-shadow: 0 0 15px #00ff00, 0 0 25px rgba(0, 255, 0, 0.6);
 }
 
-/* CONTACT BUTTON (Bottom) */
+/* CONTACT BUTTON */
 .contact {
     background: #9900ff;
     color: white;
@@ -173,6 +173,5 @@ input::placeholder {
 
 .contact:hover {
     transform: scale(1.05);
-    background: #ad33ff;
     box-shadow: 0 0 15px #9900ff, 0 0 25px rgba(153, 0, 255, 0.6);
 }

@@ -1,4 +1,3 @@
-// 🔍 SEARCH SYSTEM (multi keyword smart search)
 function searchApp() {
     let input = document.getElementById('search').value.toLowerCase().trim();
     let keywords = input.split(" ");
@@ -25,25 +24,22 @@ function searchApp() {
 }
 
 
-// ⭐ RATING SYSTEM
+// ⭐ rating system
 let stars = document.querySelectorAll(".rating span");
 
 stars.forEach(star => {
     star.addEventListener("click", () => {
 
         let value = star.getAttribute("data-value");
-
-        // reset all
         let parent = star.parentElement;
-        let allStars = parent.querySelectorAll("span");
+        let all = parent.querySelectorAll("span");
 
-        allStars.forEach(s => s.classList.remove("active"));
+        all.forEach(s => s.classList.remove("active"));
 
-        // fill stars
         for (let i = 0; i < value; i++) {
-            allStars[i].classList.add("active");
+            all[i].classList.add("active");
         }
 
-        alert("You rated this " + value + " ⭐ stars");
+        alert("You rated " + value + " stars ⭐");
     });
 });

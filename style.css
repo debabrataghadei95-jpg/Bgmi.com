@@ -1,39 +1,29 @@
-/* --- GLOBAL STYLES --- */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial;
     background: #0f0f0f;
     color: white;
     text-align: center;
 }
 
-/* TITLE */
 h1 {
     color: #00ffcc;
     margin-top: 20px;
-    font-size: 1.8rem;
 }
 
 p {
     color: #aaa;
-    font-size: 0.9rem;
 }
 
-/* SEARCH BOX */
 input {
     padding: 10px;
     width: 80%;
     max-width: 400px;
+    margin: 15px;
     border-radius: 8px;
     border: none;
-    margin: 15px;
     background: #222;
     color: white;
-    outline: none;
-}
-
-input::placeholder {
-    color: #888;
 }
 
 /* CONTAINER */
@@ -43,53 +33,42 @@ input::placeholder {
     align-items: center;
     gap: 15px;
     padding: 15px;
-    width: 100%;
-    box-sizing: border-box;
 }
 
-/* =========================
-   CARD DESIGN (MAIN FIX)
-========================= */
+/* CARD */
 .card {
     background: #1c1c1c;
-    border-radius: 12px;
     width: 95%;
     max-width: 600px;
     height: 140px;
+    border-radius: 12px;
 
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 
     padding: 10px 15px;
     box-sizing: border-box;
-
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
 }
 
-/* LEFT SIDE (LOGO + STARS) */
+/* LEFT */
 .card-left {
+    width: 90px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    min-width: 90px;
 }
 
-/* LOGO */
-.card img {
+.card-left img {
     width: 75px;
     height: 75px;
-    object-fit: cover;
     border-radius: 12px;
-    margin-bottom: 6px;
+    object-fit: cover;
 }
 
-/* STARS UNDER LOGO */
 .rating {
     font-size: 12px;
-    text-align: center;
+    margin-top: 5px;
 }
 
 .rating span {
@@ -98,80 +77,52 @@ input::placeholder {
 
 .rating span.active {
     color: #00ffcc;
-    text-shadow: 0 0 6px rgba(0, 255, 204, 0.6);
 }
 
-/* MIDDLE (APK NAME + VERSION) */
+/* MIDDLE */
 .card-info {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 6px;
-    padding: 0 15px;
     text-align: left;
+    padding: 0 15px;
 }
 
-/* APK NAME */
-.card h2 {
+.card-info h2 {
+    margin: 0;
     font-size: 1.2rem;
-    color: white;
-    margin: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
-/* VERSION */
-.card p {
+.version {
     font-size: 0.85rem;
-    margin: 0;
     color: #00ffcc;
-    font-weight: 500;
+    margin-top: 5px;
 }
 
-/* RIGHT SIDE (BUTTONS) */
+/* RIGHT */
 .card-buttons {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    min-width: 120px;
-    align-items: stretch;
+    width: 120px;
 }
 
-/* BUTTON BASE */
+/* BUTTONS */
 .btn {
-    display: block;
-    padding: 8px 10px;
+    padding: 8px;
     border-radius: 6px;
     text-decoration: none;
+    font-size: 12px;
     font-weight: bold;
-    font-size: 0.72rem;
-    text-transform: uppercase;
     text-align: center;
-    transition: 0.3s ease;
 }
 
-/* DOWNLOAD BUTTON */
+/* DOWNLOAD */
 .download {
     background: #00ff00;
     color: black;
-    box-shadow: 0 0 8px rgba(0, 255, 0, 0.4);
 }
 
-.download:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px #00ff00, 0 0 25px rgba(0, 255, 0, 0.6);
-}
-
-/* CONTACT BUTTON */
+/* CONTACT */
 .contact {
     background: #9900ff;
     color: white;
-    box-shadow: 0 0 8px rgba(153, 0, 255, 0.4);
-}
-
-.contact:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px #9900ff, 0 0 25px rgba(153, 0, 255, 0.6);
 }

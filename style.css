@@ -36,37 +36,55 @@ input::placeholder {
     color: #888;
 }
 
-/* Container */
+/* Container - अब यह सब कुछ एक के नीचे एक (Column) सेट करेगा */
 .container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+    flex-direction: column; /* कार्ड्स को ऊपर-नीचे करने के लिए */
+    align-items: center;    /* सेंटर में रखने के लिए */
+    gap: 12px;
     padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* --- CARD STYLE (HALF SIZE) --- */
+/* --- PLAY STORE STYLE CARD (UPER-NICHE LIST) --- */
 .card {
     background: #1c1c1c;
-    padding: 10px;
-    margin: 5px;
+    padding: 12px;
     border-radius: 12px;
-    width: 140px; /* कार्ड का साइज छोटा (आधा) किया गया */
+    width: 95%;            /* मोबाइल स्क्रीन के हिसाब से पूरी चौड़ाई */
+    max-width: 380px;      /* बड़ी स्क्रीन पर बहुत ज़्यादा फैला हुआ न दिखे */
     box-sizing: border-box;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    
+    /* अंदर के आइटम्स को आमने-सामने (Row) करने के लिए ताकि लेफ्ट में इमेज और राइट में डिटेल्स आएं */
+    display: flex;
+    align-items: center;
+    text-align: left;      /* टेक्स्ट को लेफ्ट अलाइन किया */
+    gap: 15px;
 }
 
-/* Image */
+/* Image - Play Store जैसा छोटा लोगो */
 .card img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 6px;
+    width: 70px;          /* इमेज को छोटा करके स्क्वायर लोगो बनाया */
+    height: 70px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 0;     /* पुराना मार्जिन हटाया */
+}
+
+/* Card Content Info Wrapper (नाम, रेटिंग और पैराग्राफ को सहेजने के लिए) */
+.card-info {
+    flex: 1;              /* बची हुई जगह यह हिस्सा लेगा */
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
 /* Card Headings */
 .card h2 {
-    font-size: 0.9rem;
-    margin: 5px 0;
+    font-size: 1rem;
+    margin: 0;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -75,38 +93,47 @@ input::placeholder {
 /* Card Paragraph */
 .card p {
     font-size: 0.75rem;
-    margin: 3px 0;
+    margin: 0;
+    color: #aaa;
 }
 
 /* --- RATING STARS (GREEN) --- */
 .rating {
-    font-size: 14px;
+    font-size: 12px;
     cursor: pointer;
-    margin: 5px 0;
+    margin: 2px 0;
 }
 
 .rating span {
-    color: gray; /* बिना रेटिंग वाले स्टार्स */
+    color: gray;
 }
 
 .rating span.active {
-    color: #00ffcc; /* एक्टिव स्टार्स का रंग हरा/टीला */
+    color: #00ffcc;
     text-shadow: 0 0 5px rgba(0, 255, 204, 0.6);
+}
+
+/* Wrapper for buttons inside the list card */
+.card-buttons {
+    display: flex;
+    flex-direction: column; /* बटन्स को एक-दूसरे के ऊपर-नीचे रखने के लिए */
+    gap: 5px;
+    justify-content: center;
 }
 
 /* --- ANIMATED BUTTONS WITH GLOW EFFECT --- */
 .btn {
     display: block;
-    padding: 7px 4px;
-    margin: 8px auto;
+    padding: 6px 10px;
+    margin: 0;
     border-radius: 6px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     text-transform: uppercase;
     transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
 }
 
 /* DOWNLOAD BUTTON (Lime Green) */
@@ -119,37 +146,4 @@ input::placeholder {
 .download:hover {
     transform: scale(1.05);
     background: #26ff26;
-    box-shadow: 0 0 15px #00ff00, 0 0 25px rgba(0, 255, 0, 0.6);
-}
-
-/* TELEGRAM BUTTON (Deep Pink) */
-.telegram {
-    background: #ff1493;
-    color: white;
-    box-shadow: 0 0 8px rgba(255, 20, 147, 0.4);
-    animation: pulseGlow 2s infinite; /* हमेशा धड़कने वाला ग्लो इफ़ेक्ट */
-}
-
-.telegram:hover {
-    transform: scale(1.05);
-    background: #ff33a3;
-    box-shadow: 0 0 15px #ff1493, 0 0 25px rgba(255, 20, 147, 0.6);
-}
-
-/* Button Active State */
-.btn:active {
-    transform: scale(0.98);
-}
-
-/* --- GLOW ANIMATION KEYFRAMES --- */
-@keyframes pulseGlow {
-    0% {
-        box-shadow: 0 0 8px rgba(255, 20, 147, 0.4);
-    }
-    50% {
-        box-shadow: 0 0 14px rgba(255, 20, 147, 0.8);
-    }
-    100% {
-        box-shadow: 0 0 8px rgba(255, 20, 147, 0.4);
-    }
-}
+    box-shadow: 0 0 15px #00ff00, 0 0 25px rgba(0, 255, 0

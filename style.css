@@ -59,13 +59,15 @@ input {
     font-weight: bold;
 }
 
+/* ⬇ DOWNLOAD BUTTON - Changed to Lime */
 .download {
-    background: #00ffcc;
+    background: #00ff00; /* Lime Green */
     color: black;
 }
 
+/* 📢 TELEGRAM BUTTON - Changed to Deep Pink */
 .telegram {
-    background: #229ED9;
+    background: #ff1493; /* Deep Pink */
     color: white;
 }
 
@@ -77,9 +79,11 @@ input {
 }
 
 .rating span {
-    color: gray;
+    color: gray; /* बिना रेटिंग वाले स्टार्स ग्रे रहेंगे */
 }
 
+/* ACTIVE STARS - Changed from Gold to Green */
 .rating span.active {
-    color: gold;
+    color: #00ffcc; /* Greenish/Teal color (आप चाहें तो शुद्ध हरा #00ff00 भी कर सकते हैं) */
+    text-shadow: 0 0 5px rgba(0, 255, 204, 0.5); /* हल्का सा ग्रीन ग्लो इफ़ेक्ट */
 }

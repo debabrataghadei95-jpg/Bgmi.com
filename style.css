@@ -1,3 +1,4 @@
+/* --- GLOBAL STYLES --- */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -10,20 +11,29 @@ body {
 h1 {
     color: #00ffcc;
     margin-top: 20px;
+    font-size: 1.8rem;
 }
 
 p {
     color: #aaa;
+    font-size: 0.9rem;
 }
 
 /* Search box */
 input {
-    padding: 12px;
+    padding: 10px;
     width: 80%;
     max-width: 400px;
     border-radius: 8px;
     border: none;
     margin: 15px;
+    background: #222;
+    color: white;
+    outline: none;
+}
+
+input::placeholder {
+    color: #888;
 }
 
 /* Container */
@@ -31,59 +41,115 @@ input {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 10px;
+    padding: 10px;
 }
 
-/* Card */
+/* --- CARD STYLE (HALF SIZE) --- */
 .card {
     background: #1c1c1c;
-    padding: 20px;
-    margin: 15px;
-    border-radius: 15px;
-    width: 280px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 12px;
+    width: 140px; /* कार्ड का साइज छोटा (आधा) किया गया */
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* Image */
 .card img {
     width: 100%;
-    border-radius: 12px;
-    margin-bottom: 10px;
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 12px 18px;
-    margin: 8px;
     border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
+    margin-bottom: 6px;
 }
 
-/* ⬇ DOWNLOAD BUTTON - Changed to Lime */
-.download {
-    background: #00ff00; /* Lime Green */
-    color: black;
+/* Card Headings */
+.card h2 {
+    font-size: 0.9rem;
+    margin: 5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-/* 📢 TELEGRAM BUTTON - Changed to Deep Pink */
-.telegram {
-    background: #ff1493; /* Deep Pink */
-    color: white;
+/* Card Paragraph */
+.card p {
+    font-size: 0.75rem;
+    margin: 3px 0;
 }
 
-/* ⭐ Rating */
+/* --- RATING STARS (GREEN) --- */
 .rating {
-    font-size: 24px;
+    font-size: 14px;
     cursor: pointer;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .rating span {
-    color: gray; /* बिना रेटिंग वाले स्टार्स ग्रे रहेंगे */
+    color: gray; /* बिना रेटिंग वाले स्टार्स */
 }
 
-/* ACTIVE STARS - Changed from Gold to Green */
 .rating span.active {
-    color: #00ffcc; /* Greenish/Teal color (आप चाहें तो शुद्ध हरा #00ff00 भी कर सकते हैं) */
-    text-shadow: 0 0 5px rgba(0, 255, 204, 0.5); /* हल्का सा ग्रीन ग्लो इफ़ेक्ट */
+    color: #00ffcc; /* एक्टिव स्टार्स का रंग हरा/टीला */
+    text-shadow: 0 0 5px rgba(0, 255, 204, 0.6);
+}
+
+/* --- ANIMATED BUTTONS WITH GLOW EFFECT --- */
+.btn {
+    display: block;
+    padding: 7px 4px;
+    margin: 8px auto;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* DOWNLOAD BUTTON (Lime Green) */
+.download {
+    background: #00ff00;
+    color: black;
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.4); 
+}
+
+.download:hover {
+    transform: scale(1.05);
+    background: #26ff26;
+    box-shadow: 0 0 15px #00ff00, 0 0 25px rgba(0, 255, 0, 0.6);
+}
+
+/* TELEGRAM BUTTON (Deep Pink) */
+.telegram {
+    background: #ff1493;
+    color: white;
+    box-shadow: 0 0 8px rgba(255, 20, 147, 0.4);
+    animation: pulseGlow 2s infinite; /* हमेशा धड़कने वाला ग्लो इफ़ेक्ट */
+}
+
+.telegram:hover {
+    transform: scale(1.05);
+    background: #ff33a3;
+    box-shadow: 0 0 15px #ff1493, 0 0 25px rgba(255, 20, 147, 0.6);
+}
+
+/* Button Active State */
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* --- GLOW ANIMATION KEYFRAMES --- */
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 8px rgba(255, 20, 147, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 14px rgba(255, 20, 147, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 8px rgba(255, 20, 147, 0.4);
+    }
 }

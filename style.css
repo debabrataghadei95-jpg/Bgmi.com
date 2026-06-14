@@ -1,50 +1,5 @@
 /* =======================
-   GLOBAL STYLE
-======================= */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0f0f0f;
-    color: white;
-    text-align: center;
-}
-
-/* TITLE */
-h1 {
-    color: #00ffcc;
-    margin-top: 18px;
-    font-size: 1.4rem;
-}
-
-p {
-    color: #aaa;
-    font-size: 0.85rem;
-}
-
-/* SEARCH */
-input {
-    padding: 12px;
-    width: 92%;
-    max-width: 500px;
-    margin: 12px auto;
-    border-radius: 10px;
-    border: none;
-    background: #1f1f1f;
-    color: white;
-    outline: none;
-}
-
-/* CONTAINER */
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    padding: 12px;
-}
-
-/* =======================
-   CARD DESIGN
+   CARD BASE
 ======================= */
 .card {
     width: 95%;
@@ -55,15 +10,9 @@ input {
     display: flex;
     align-items: flex-start;
     gap: 12px;
-
-    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
 }
 
-/* LEFT IMAGE */
-.card-left {
-    flex: 0 0 60px;
-}
-
+/* IMAGE */
 .card-left img {
     width: 58px;
     height: 58px;
@@ -79,20 +28,21 @@ input {
     text-align: left;
 }
 
-/* APK NAME (SMALL) */
+/* APK NAME */
 .card-info h2 {
     margin: 0;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     color: white;
+
+    /* mobile wrap */
     white-space: normal;
-    line-height: 1.2;
 }
 
-/* VERSION (SMALL) */
+/* VERSION (JUST BELOW NAME) */
 .version {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     color: #00ffcc;
-    margin-top: 3px;
+    margin-top: 4px;
 }
 
 /* =======================
@@ -104,49 +54,45 @@ input {
     gap: 6px;
 }
 
-/* BUTTON STYLE */
 .btn {
     padding: 6px 10px;
     border-radius: 8px;
-    font-size: 9px;
+    font-size: 10px;
     font-weight: bold;
     text-decoration: none;
     text-align: center;
     white-space: nowrap;
 }
 
-/* DOWNLOAD */
 .download {
     background: #00ff00;
     color: black;
 }
 
-/* CONTACT */
 .contact {
     background: #7a00ff;
     color: white;
 }
 
 /* =======================
-   MOBILE FIX
+   DESKTOP FIX
 ======================= */
-@media (max-width: 600px) {
+@media (min-width: 768px) {
 
-    .card {
-        flex-direction: row;
-        padding: 10px;
-    }
-
+    /* APK NAME single line */
     .card-info h2 {
-        font-size: 0.72rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
+    /* VERSION stays below name */
     .version {
-        font-size: 0.58rem;
+        margin-top: 4px;
     }
 
-    .btn {
-        font-size: 8.5px;
-        padding: 5px 8px;
+    /* buttons alignment */
+    .card-buttons {
+        align-items: flex-end;
     }
 }

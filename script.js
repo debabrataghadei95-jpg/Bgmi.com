@@ -1,12 +1,17 @@
 function searchApp() {
     let input = document.getElementById('search').value.toLowerCase().trim();
-    let keywords = input.split(" ");
+    let keywords = input.split(" ").filter(k => k !== "");
     let cards = document.getElementsByClassName('card');
 
     for (let i = 0; i < cards.length; i++) {
 
-        let title = cards[i].getElementsByTagName("h2")[0].innerText.toLowerCase();
-        let desc = cards[i].getElementsByTagName("p")[0].innerText.toLowerCase();
+        let titleEl = cards[i].getElementsByTagName("h2")[0];
+        let descEl = cards[i].querySelector(".version");
+
+        if (!titleEl || !descEl) continue;
+
+        let title = titleEl.innerText.toLowerCase();
+        let desc = descEl.innerText.toLowerCase();
 
         let fullText = title + " " + desc;
 
@@ -19,27 +24,40 @@ function searchApp() {
             }
         }
 
-        cards[i].style.display = match ? "" : "none";
+        cards[i].style.display = match ? "flex" : "none";
     }
 }
 
 
-// ⭐ rating system
-let stars = document.querySelectorAll(".rating span");
+/* ⭐ STAR RATING SYSTEM (FIXED FOR MULTIPLE CARDS) */
+document.addEventListener("DOMContentLoaded", function () {
 
-stars.forEach(star => {
-    star.addEventListener("click", () => {
+    let ratingContainers = document.querySelectorAll(".rating");
 
-        let value = star.getAttribute("data-value");
-        let parent = star.parentElement;
-        let all = parent.querySelectorAll("span");
+    ratingContainers.forEach(container => {
 
-        all.forEach(s => s.classList.remove("active"));
+        let stars = container.querySelectorAll("span");
 
-        for (let i = 0; i < value; i++) {
-            all[i].classList.add("active");
-        }
+        stars.forEach((star, index) => {
 
-        alert("You rated " + value + " stars ⭐");
+            star.addEventListener("click", () => {
+
+                // reset all stars
+                stars.forEach(s => s.classList.remove("active"));
+
+                // activate clicked stars
+                for (let i = 0; i <= index; i++) {
+                    stars[i].classList.add("active");
+                }
+
+                let value = index + 1;
+                console.log("Rated:", value);
+
+                alert("You rated " + value + " stars ⭐");
+            });
+
+        });
+
     });
+
 });

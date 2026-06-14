@@ -3,142 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BGMI 4.5 64 BIT APK + OBB Download</title>
+<title>APK Download Hub</title>
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0f0f0f;
-    color: white;
-    text-align: center;
-}
-
-.container {
-    margin-top: 80px;
-}
-
-h1 {
-    color: #00ffcc;
-    font-size: 32px;
-}
-
-p {
-    color: #aaa;
-    margin-bottom: 30px;
-}
-
-.card {
-    background: #1c1c1c;
-    padding: 25px;
-    margin: 20px;
-    border-radius: 15px;
-    display: inline-block;
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 15px 25px;
-    margin: 10px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.download {
-    background: #00ffcc;
-    color: black;
-}
-
-.download:hover {
-    background: #00c9a3;
-}
-
-.telegram {
-    background: #229ED9;
-    color: white;
-}
-
-.telegram:hover {
-    background: #1b7fb3;
-}
-
-/* ⭐ Rating System */
-.rating {
-    font-size: 25px;
-    cursor: pointer;
-    margin: 15px 0;
-    user-select: none;
-}
-
-.rating span {
-    color: gray;
-    transition: 0.2s;
-}
-
-.rating span.active {
-    color: gold;
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<h1>📱 APK Download Hub</h1>
+<p>Latest Android APKs + OBB Files</p>
+
+<!-- 🔍 SEARCH -->
+<input type="text" id="search" placeholder="Search APK (bgmi 4.5 obb)" onkeyup="searchApp()">
+
 <div class="container">
 
-<h1>BGMI 4.5 64 BIT APK + OBB</h1>
-<p>Latest Version Available for Download</p>
-
+<!-- ⭐ APP CARD 1 -->
 <div class="card">
 
-<h2>Version 4.5 (64 BIT)</h2>
-<p>Total Size: ~1.4 GB</p>
+    <img src="images/bgmi.png" alt="BGMI">
 
-<!-- ⭐ RATING SYSTEM -->
-<div class="rating" id="rating">
-    <span data-value="1">★</span>
-    <span data-value="2">★</span>
-    <span data-value="3">★</span>
-    <span data-value="4">★</span>
-    <span data-value="5">★</span>
-</div>
+    <h2>BGMI 4.5 APK</h2>
+    <p>64 Bit | OBB File | Latest Update</p>
 
-<!-- Download Button -->
-<a class="btn download" href="https://t.me/VoltageLoader" target="_blank">
-⬇ Download APK + OBB
-</a>
+    <!-- ⭐ Rating -->
+    <div class="rating">
+        <span data-value="1">★</span>
+        <span data-value="2">★</span>
+        <span data-value="3">★</span>
+        <span data-value="4">★</span>
+        <span data-value="5">★</span>
+    </div>
 
-<!-- Telegram Button -->
-<a class="btn telegram" href="https://t.me/VoltageLoader" target="_blank">
-📢 Join Telegram
-</a>
+    <!-- ⬇ Download -->
+    <a class="btn download" href="apk/bgmi.apk">⬇ Download APK + OBB</a>
+
+    <!-- 📢 Telegram -->
+    <a class="btn telegram" href="https://t.me/yourchannel">📢 Join Telegram</a>
 
 </div>
 
+<!-- ⭐ APP CARD 2 -->
+<div class="card">
+
+    <img src="images/freefire.png" alt="Free Fire">
+
+    <h2>Free Fire MAX</h2>
+    <p>Latest Version | Android APK</p>
+
+    <div class="rating">
+        <span data-value="1">★</span>
+        <span data-value="2">★</span>
+        <span data-value="3">★</span>
+        <span data-value="4">★</span>
+        <span data-value="5">★</span>
+    </div>
+
+    <a class="btn download" href="apk/freefire.apk">⬇ Download</a>
+
+    <a class="btn telegram" href="https://t.me/yourchannel">📢 Join Telegram</a>
+
 </div>
 
-<script>
-// ⭐ Rating Logic
-let stars = document.querySelectorAll("#rating span");
+</div>
 
-stars.forEach(star => {
-    star.addEventListener("click", () => {
-        let value = star.getAttribute("data-value");
-
-        stars.forEach(s => {
-            s.classList.remove("active");
-        });
-
-        for (let i = 0; i < value; i++) {
-            stars[i].classList.add("active");
-        }
-
-        alert("You rated this " + value + " stars ⭐");
-    });
-});
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>

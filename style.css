@@ -1,3 +1,51 @@
+/* =======================
+   GLOBAL STYLE
+======================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f0f0f;
+    color: white;
+    text-align: center;
+}
+
+/* TITLE */
+h1 {
+    color: #00ffcc;
+    margin-top: 18px;
+    font-size: 1.4rem;
+}
+
+p {
+    color: #aaa;
+    font-size: 0.85rem;
+}
+
+/* SEARCH */
+input {
+    padding: 12px;
+    width: 92%;
+    max-width: 500px;
+    margin: 12px auto;
+    border-radius: 10px;
+    border: none;
+    background: #1f1f1f;
+    color: white;
+    outline: none;
+}
+
+/* CONTAINER */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+}
+
+/* =======================
+   CARD DESIGN
+======================= */
 .card {
     width: 95%;
     background: #1b1b1b;
@@ -7,9 +55,15 @@
     display: flex;
     align-items: flex-start;
     gap: 12px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.35);
 }
 
-/* IMAGE */
+/* LEFT IMAGE */
+.card-left {
+    flex: 0 0 60px;
+}
+
 .card-left img {
     width: 58px;
     height: 58px;
@@ -17,70 +71,82 @@
     object-fit: cover;
 }
 
-/* INFO */
+/* =======================
+   INFO
+======================= */
 .card-info {
     flex: 1;
     text-align: left;
 }
 
-/* APK NAME (SMALLER) */
+/* APK NAME (SMALL) */
 .card-info h2 {
     margin: 0;
-    font-size: 0.75rem;   /* 👈 reduced */
+    font-size: 0.75rem;
     color: white;
-
     white-space: normal;
     line-height: 1.2;
 }
 
-/* VERSION (SMALLER) */
+/* VERSION (SMALL) */
 .version {
-    font-size: 0.62rem;   /* 👈 reduced */
+    font-size: 0.6rem;
     color: #00ffcc;
     margin-top: 3px;
 }
 
-/* BUTTONS */
+/* =======================
+   BUTTONS
+======================= */
 .card-buttons {
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 
+/* BUTTON STYLE */
 .btn {
-    padding: 5px 9px;
-    border-radius: 7px;
-    font-size: 9px;       /* 👈 reduced */
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 9px;
     font-weight: bold;
     text-decoration: none;
     text-align: center;
     white-space: nowrap;
 }
 
+/* DOWNLOAD */
 .download {
     background: #00ff00;
     color: black;
 }
 
+/* CONTACT */
 .contact {
     background: #7a00ff;
     color: white;
 }
 
-/* DESKTOP */
-@media (min-width: 768px) {
+/* =======================
+   MOBILE FIX
+======================= */
+@media (max-width: 600px) {
+
+    .card {
+        flex-direction: row;
+        padding: 10px;
+    }
 
     .card-info h2 {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        font-size: 0.72rem;
     }
 
     .version {
-        margin-top: 3px;
+        font-size: 0.58rem;
     }
 
-    .card-buttons {
-        align-items: flex-end;
+    .btn {
+        font-size: 8.5px;
+        padding: 5px 8px;
     }
 }

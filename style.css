@@ -44,22 +44,20 @@ input {
 }
 
 /* =========================
-   CARD DESIGN
+   CARD DESIGN (UPDATED)
 ========================= */
 .card {
-    background: #1c1c1c;
+    background: #1b1b1b; /* 👈 Updated color */
     width: 95%;
     max-width: 650px;
-    height: 120px;
+    border-radius: 14px; /* 👈 Updated radius */
+    padding: 12px;       /* 👈 Updated padding */
 
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* 👈 Aligned to top start */
     justify-content: space-between;
-
-    padding: 10px 15px;
-    border-radius: 12px;
+    gap: 12px;           /* 👈 Updated gap */
     box-sizing: border-box;
-
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     transition: 0.3s ease;
 }
@@ -79,9 +77,9 @@ input {
 }
 
 .card-left img {
-    width: 65px;
-    height: 65px;
-    border-radius: 10px;
+    width: 58px;          /* 👈 Reduced size */
+    height: 58px;         /* 👈 Reduced size */
+    border-radius: 12px;  /* 👈 Updated radius */
     object-fit: cover;
 }
 
@@ -99,7 +97,7 @@ input {
 }
 
 /* =========================
-   MIDDLE
+   MIDDLE (UPDATED)
 ========================= */
 .card-info {
     flex: 1;
@@ -107,37 +105,40 @@ input {
     padding: 0 10px;
 }
 
+/* APK NAME (SMALLER) */
 .card-info h2 {
-    font-size: 0.85rem;
     margin: 0;
+    font-size: 0.75rem;   /* 👈 Reduced */
     color: white;
     font-weight: bold;
+    white-space: normal;
+    line-height: 1.2;
 }
 
+/* VERSION (SMALLER) */
 .version {
-    font-size: 0.7rem;
+    font-size: 0.62rem;   /* 👈 Reduced */
     color: #00ffcc;
     margin-top: 3px;
 }
 
 /* =========================
-   RIGHT SIDE
+   RIGHT SIDE & BUTTONS (UPDATED)
 ========================= */
 .card-buttons {
     display: flex;
     flex-direction: column;
     gap: 6px;
-    width: 110px;
 }
 
-/* BUTTONS */
 .btn {
-    padding: 7px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 10px;
+    padding: 5px 9px;     /* 👈 Compact padding */
+    border-radius: 7px;
+    font-size: 9px;       /* 👈 Reduced */
     font-weight: bold;
+    text-decoration: none;
     text-align: center;
+    white-space: nowrap;
     transition: 0.3s ease;
 }
 
@@ -149,60 +150,49 @@ input {
 
 /* CONTACT */
 .contact {
-    background: #9900ff;
+    background: #7a00ff;  /* 👈 Updated purple color */
     color: white;
 }
 
-/* HOVER */
+/* HOVER EFFECT */
 .download:hover, .contact:hover {
     transform: scale(1.05);
 }
 
 /* =========================
-   MOBILE RESPONSIVE FIX
+   RESPONSIVE DESIGN (DESKTOP)
 ========================= */
-@media (max-width: 600px) {
-
-    .card {
-        height: auto;
-        padding: 12px;
-        gap: 10px;
-    }
-
-    .card-left img {
-        width: 55px;
-        height: 55px;
-    }
-
-    .rating {
-        font-size: 10px;
-    }
-
+@media (min-width: 768px) {
     .card-info h2 {
-        font-size: 0.78rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .version {
-        font-size: 0.65rem;
+        margin-top: 3px;
     }
 
     .card-buttons {
-        flex-direction: row;
-        width: auto;
-        gap: 6px;
+        align-items: flex-end;
     }
+}
 
-    .btn {
-        font-size: 9px;
-        padding: 6px 8px;
-        white-space: nowrap;
-    }
-
+/* =========================
+   RESPONSIVE DESIGN (MOBILE FIX)
+========================= */
+@media (max-width: 600px) {
     input {
         width: 90%;
     }
 
     h1 {
         font-size: 1.3rem;
+    }
+    
+    /* Mobile me buttons side-by-side karne ke liye agar zaroorat ho */
+    .card-buttons {
+        flex-direction: column; 
+        gap: 5px;
     }
 }
